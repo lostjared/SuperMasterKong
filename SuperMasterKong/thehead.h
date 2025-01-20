@@ -1191,7 +1191,8 @@ private:
 	//		tt_font = MakeFont("Arial",25);
 //			ttt_font = MakeFont("FixedSys", 40);
 		//	input_font = MakeFont("Arial",15);
-			input_on = false;
+			//input_on = false;
+            input_on = true;
 			input_index = 0;
 			strcpy(input_data,"");
 		}
@@ -1302,8 +1303,11 @@ private:
 				}
 				else
 				{
-					input_data[input_index] = key;
-					input_index ++;
+                    if(input_index < 99) {
+                        input_data[input_index] = key;
+                        input_index ++;
+                        input_data[input_index] = 0;
+                    }
 				}
 			}
 		}

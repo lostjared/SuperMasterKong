@@ -215,6 +215,8 @@ public:
 			
 			switch(dir)
 			{
+            default:
+                    break;
 			case RIGHT:
 				images[cur_img].DisplayGraphic(cur_x,cur_y);
 				break;
@@ -410,6 +412,8 @@ public:
 			
 			switch(dir)
 			{
+                default:
+                    break;
 			case RIGHT:
 				images[cur_img].DisplayGraphic(cur_x,cur_y);
 				break;
@@ -646,6 +650,9 @@ private:
 						case RIGHT:
 							particles[i].cur_x += particles[i].speed;
 							break;
+                            default:
+                                break;
+                                
 						}
 					}
 					break;
@@ -1571,7 +1578,7 @@ public:
 	inline void loadlevel()
 	{
 		char levelstr[255];
-		sprintf(levelstr,"level%i.smk",level);
+		snprintf(levelstr,254,"level%i.smk",level);
 		if(matrix.read_map_from_file(levelstr) == true)
 		{	
 			start_level();

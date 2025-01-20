@@ -53,8 +53,8 @@ struct SDL_Font *SDL_InitFont(const char *src) {
 
 	#ifdef FOR_WASM
 	char buffer[4096];
-	sprintf(buffer, "/assets/%s", src);
-	FILE *fptr = fopen(buffer, "rb");
+	snprintf(buffer,4095 "/assets/%s", src);
+	FILE *fptr = fopen(buffer, "rb");dd
 	#else
 	FILE *fptr = fopen(src, "rb");
 	#endif

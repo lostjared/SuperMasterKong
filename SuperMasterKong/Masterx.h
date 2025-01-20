@@ -78,7 +78,7 @@ public:
 		char text[5000];
 		va_list list;
 		va_start(list, str);
-		vsprintf((char*)text,str,list);
+		vsnprintf((char*)text,5000,str,list);
 		va_end(list);
 		printtext(text, x,y);
 	}
@@ -132,7 +132,7 @@ public:
 
 #ifdef FOR_WASM
 		char buffer[4096];
-		sprintf(buffer, "/assets/%s", filename);
+		snprintf(buffer,4095 "/assets/%s", filename);
 		surf = SDL_LoadBMP(buffer);
 		
 		if(surf == NULL) {

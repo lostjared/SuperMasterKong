@@ -1,5 +1,6 @@
 # SuperMasterKong
-Port of a video game I wrote in my early twenties. 
+Port of a video game I wrote in my early twenties. Tried to clean the code up a bit, but this
+was written before I was more familiar with C++ so take it with a grain of salt.
 
 
 Build and run the game:

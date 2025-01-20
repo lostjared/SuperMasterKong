@@ -1192,7 +1192,7 @@ private:
 //			ttt_font = MakeFont("FixedSys", 40);
 		//	input_font = MakeFont("Arial",15);
 			//input_on = false;
-            input_on = true;
+            input_on = false;
 			input_index = 0;
 			strcpy(input_data,"");
 		}
@@ -1262,7 +1262,7 @@ private:
 			input_index = 0;
 			memset(input_data,0,100);
 			strcpy(input_data,"");
-			input_on = false;
+			input_on = true;
 		}
 		
 		const inline int getlastscore() const

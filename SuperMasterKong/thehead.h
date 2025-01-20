@@ -1262,7 +1262,7 @@ private:
 			input_index = 0;
 			memset(input_data,0,100);
 			strcpy(input_data,"");
-			input_on = true;
+			input_on = false;
 		}
 		
 		const inline int getlastscore() const

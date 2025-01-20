@@ -61,8 +61,12 @@ struct SDL_Font *SDL_InitFont(const char *src) {
 	int q = 0,mx = 0,my = 0;
 	struct SDL_Font *fnt;
 	int i,z,p;
-	if(!fptr) return 0;
 	int mode = 0;
+
+	if(!fptr) {
+		fprintf(stderr, "Error loading font  %s\n", src);
+		exit(EXIT_FAILURE);
+	}
 
 
 	fnt = (struct SDL_Font*)malloc(sizeof(struct SDL_Font));
@@ -133,6 +137,12 @@ void SDL_FreeFont(struct SDL_Font *m) {
 }
 
 int SDL_PrintText(struct SDL_Surface *surf, struct SDL_Font *fnt, int x, int y, Uint32 color, const char *src) {
+
+	if(surf ==NULL || fnt == NULL || src == NULL) {
+		fprintf(stderr, "Error printtext requiements not meant..\n");
+		exit(EXIT_FAILURE);
+	}
+
 	int prev_x = x;
 	int offset_x = prev_x, offset_y = y;
 	int width = 0, height = 0;
